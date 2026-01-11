@@ -1,0 +1,14 @@
+Title: ChatPilot - AI Powered WhatsApp SaaS Platform | Marketing, Chatbots & Bulk Sender
+
+Features List:
+✅ SaaS Ready: Integrated Payment Gateways & Subscription Plans.
+✅ Official API: Uses Meta Cloud API (No banning risk).
+✅ AI Smart Bots: OpenAI integration for auto-replies.
+✅ Bulk Campaigns: Send thousands of messages with one click.
+✅ Live Chat: Real-time multi-agent chat interface.
+✅ White Label: Your customers see YOUR branding, not ours.
+
+Description:
+ChatPilot is the ultimate solution for agencies and businesses looking to automate WhatsApp marketing. 
+Built with Laravel 10 and Bootstrap 5, it offers a seamless, high-performance experience.
+Start your own SaaS business today with ChatPilot.

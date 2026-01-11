@@ -1,0 +1,11 @@
+ChatPilot - Regular License
+-----------------------------------------
+
+1. The "Regular License" grants you, the purchaser, an ongoing, non-exclusive, worldwide license to make use of the digital work (Item) you have selected.
+
+2. You are licensed to use the Item to create one single End Product for yourself or for one client (a "single application"), and the End Product can be distributed for Free.
+3. You can modify the Item and you can create one End Product for a client, and you can transfer that single End Product to your client for any fee. This license is then transferred to your client.
+4. You cannot Sell the End Product, except to one client.
+5. You cannot re-distribute the Item as stock, in a tool or template, or with source files. You cannot do this with an Item either on its own or bundled with other items, and even if you modify the Item. You cannot re-distribute or make available the Item as-is or with superficial modifications.
+
+For full license details, please visit CodeCanyon.net.

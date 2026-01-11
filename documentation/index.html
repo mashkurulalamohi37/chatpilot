@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatPilot - Documentation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 30px; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; border-left: 4px solid #3498db; }
+        code { font-family: 'Consolas', 'Monaco', monospace; color: #e74c3c; }
+        .note { background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; margin: 20px 0; border: 1px solid #ffeeba; }
+    </style>
+</head>
+<body>
+    <h1>ChatPilot - Documentation</h1>
+    <p>Thank you for buying <strong>ChatPilot</strong>. This guide will help you install and configure your new AI-powered WhatsApp SaaS platform.</p>
+
+    <h2>1. Server Requirements</h2>
+    <p>Ensure your server meets the following requirements:</p>
+    <ul>
+        <li>PHP >= 8.1</li>
+        <li>MySQL >= 5.7 or MariaDB</li>
+        <li>BCMath PHP Extension</li>
+        <li>Ctype PHP Extension</li>
+        <li>JSON PHP Extension</li>
+        <li>Mbstring PHP Extension</li>
+        <li>OpenSSL PHP Extension</li>
+        <li>PDO PHP Extension</li>
+        <li>Tokenizer PHP Extension</li>
+        <li>XML PHP Extension</li>
+    </ul>
+
+    <h2>2. Installation Steps</h2>
+    <ol>
+        <li><strong>Upload Files</strong>: Upload the contents of the <code>Main_File</code> folder to your server's public_html or root directory.</li>
+        <li><strong>Install Dependencies</strong>: Run the following command in your terminal:
+            <pre>composer install --optimize-autoloader --no-dev</pre>
+        </li>
+        <li><strong>Environment Setup</strong>:
+            <ul>
+                <li>Rename <code>.env.example</code> to <code>.env</code>.</li>
+                <li>Open <code>.env</code> and update your database credentials:
+<pre>DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password</pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Generate Key</strong>: Run:
+            <pre>php artisan key:generate</pre>
+        </li>
+        <li><strong>Run Migrations</strong>: Setup your database tables:
+            <pre>php artisan migrate --seed</pre>
+        </li>
+        <li><strong>Link Storage</strong>:
+            <pre>php artisan storage:link</pre>
+        </li>
+    </ol>
+
+    <h2>3. Supervisor / Queue Setup (Critical)</h2>
+    <p class="note">This step is required for Campaigns to send messages in the background.</p>
+    <p>You need to ensure <code>php artisan queue:work</code> is running constantly. On Linux servers, install <strong>Supervisor</strong>:</p>
+    <pre>
+[program:chatpilot-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /path/to/your/project/artisan queue:work --sleep=3 --tries=3
+autostart=true
+autorestart=true
+user=root
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/path/to/your/project/storage/logs/worker.log
+    </pre>
+
+    <h2>4. Facebook App Credentials</h2>
+    <p>To connect to WhatsApp, you need a Meta App:</p>
+    <ol>
+        <li>Go to <a href="https://developers.facebook.com/" target="_blank">Meta for Developers</a>.</li>
+        <li>Create a "Business" app.</li>
+        <li>Add the "WhatsApp" product.</li>
+        <li>Get your <strong>Permanent Access Token</strong> and <strong>Phone Number ID</strong>.</li>
+        <li>Enter these details in the ChatPilot <strong>Connect Device</strong> page.</li>
+    </ol>
+
+    <h2>Support</h2>
+    <p>If you have any issues, please contact us via our CodeCanyon profile.</p>
+</body>
+</html>
